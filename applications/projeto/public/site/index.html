@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Animated Login and Sign up</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300, 400, 500" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <!-- This was created based on the Dribble shot by Deepak Yadav that you can find at https://goo.gl/XRALsw
+  I'm @hk95 on GitHub. Feel free to message me anytime -->
+
+  <section class="user">
+    <div class="user_options-container">
+      <div class="user_options-text">
+        <div class="user_options-unregistered">
+          <h2 class="user_unregistered-title">Não tem conta?</h2>
+          <p class="user_unregistered-text">Crie sua conta</p>
+          <button class="user_unregistered-signup" id="signup-button">Cadastro</button>
+        </div>
+
+        <div class="user_options-registered">
+          <h2 class="user_registered-title">Fazer login</h2>
+          <p class="user_registered-text">Já tem conta? faça login!</p>
+          <button class="user_registered-login" id="login-button">Login</button>
+        </div>
+      </div>
+
+      <div class="user_options-forms" id="user_options-forms">
+        <div class="user_forms-login">
+          <h2 class="forms_title">Login</h2>
+          <fieldset class="forms_fieldset">
+            <div class="forms_field">
+              <input type="email" id="email" placeholder="E-mail" class="forms_field-input" required autofocus />
+            </div>
+            <div class="forms_field">
+              <input type="password" id="senha" placeholder="Senha" class="forms_field-input" required />
+            </div>
+          </fieldset>
+          <div class="forms_buttons">
+            <!-- <button type="button" class="forms_buttons-forgot">Forgot password?</button> -->
+            <input onclick="login(document.getElementById('email').value, document.getElementById('senha').value)"
+              type="submit" value="Log In" class="forms_buttons-action">
+          </div>
+        </div>
+        <div class="user_forms-signup">
+          <h2 class="forms_title">Criar conta</h2>
+      
+            <fieldset class="forms_fieldset">
+              <div class="forms_field">
+                <input type="text" id="nomev" placeholder="Nome" class="forms_field-input" required />
+              </div>
+              <div class="forms_field">
+                <input type="email" id="emailv" placeholder="Email" class="forms_field-input" required />
+              </div>
+              <div class="forms_field">
+                <input type="password" id="senhav" placeholder="Senha" class="forms_field-input" required />
+              </div>
+            </fieldset>
+            <div class="forms_buttons">
+              <input onclick="Vendedorcreate(document.getElementById('emailv').value, document.getElementById('senhav').value,document.getElementById('nomev').value)" type="submit" value="Sign up" class="forms_buttons-action">
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="Config/EndPoit.js"></script>
+  <script src="Config/GetToken.js"></script>
+  <script src="Config/Loading.js"></script>
+
+  <script src="./script.js"></script>
+  <script src="Service/Login/Login.js"></script>
+
+ 
+
+</body>
+
+</html>

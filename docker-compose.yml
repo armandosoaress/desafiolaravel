@@ -1,0 +1,50 @@
+version: "3.9"
+services:
+  #aplicação web (PHP+NGINX)
+  web:
+    image: php8.2
+    # image: urnau/php-community:latest
+    # utilizado quando vamos contruir uma nova imagem
+    build: 
+      context: .
+      dockerfile: ./Dockerfile
+    networks:
+      - net_principal
+    volumes:
+      - ./applications:/var/www
+      - ./docker/nginx/sites:/etc/nginx/sites-available
+    ports:
+      - "80:80" #http
+      - "443:443" #https
+      - "8080:8080"
+      - "8081:8081"
+      - "8082:8082"
+      - "8083:8083"
+      - "8084:8084"
+      - "8085:8085"
+      - "8086:8086"
+      - "8087:8087"
+      - "8088:8088"
+      - "8089:8089"
+    depends_on:
+      - mysql
+  # # aplicação MySQL
+  mysql:
+    image: mariadb:10.5
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    volumes:
+      - MYSQL_VOLUME_EXEMPLO:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: senha_exemplar_mysql
+      MYSQL_DATABASE: Projeto
+    networks:
+      - net_principal
+    ports:
+      - 3306:3306
+
+networks:
+  net_principal:
+
+volumes:
+  MYSQL_VOLUME_EXEMPLO:

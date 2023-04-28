@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+    <table id="table" style="visibility: hidden;" class="table table-responsive">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+
+    <button onclick="Criarmodalclient()" id="btn-client-cad" style="visibility: hidden;" class="btn-add">Criar Cliente</button>
+
+
+    <script src="Config/EndPoit.js"></script>
+    <script src="Config/GetToken.js"></script>
+    <script src="Config/Loading.js"></script>
+
+    <script src="Service/Clientes/Client.js"></script>
+
+
+</body>
+
+</html>
